@@ -1,0 +1,65 @@
+'''Given an integer n, return the number of trailing zeroes in n!.
+Note that n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1.
+
+Example 1:
+
+Input: n = 3
+Output: 0
+Explanation: 3! = 6, no trailing zero.
+Example 2:
+
+Input: n = 5
+Output: 1
+Explanation: 5! = 120, one trailing zero.
+Example 3:
+
+Input: n = 0
+Output: 0'''
+
+
+
+
+
+
+
+
+
+# My logic simple and easy using looping and condition
+
+class Solution(object):
+    def trailingZeroes(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        count = 0
+        for i in range(1, n + 1):
+            num = i
+            while num % 5 == 0 and num != 0:
+                count += 1
+                num //= 5
+        return count
+    
+
+
+
+
+
+
+
+# Leet code best solution
+
+# class Solution(object):
+#     def trailingZeroes(self, n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+        
+#         num_zeroes = 0
+
+#         while n > 0:
+#             n //= 5
+#             num_zeroes += n
+        
+#         return num_zeroes
